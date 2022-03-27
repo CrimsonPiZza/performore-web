@@ -1,0 +1,301 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Secular+One&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --title-color: #0B0A0A;
+  --text-color: #403A3A;
+  --text-color-light:#707070;
+  --container-color: #FAFAFA;
+  --container-color-alt: #F0EFEF;
+  --body-color: #FCFCFC;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Secular One', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --h4-font-size: 0.75rem;
+  --h5-font-size: 0.6rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margins ==========*/
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --title-color: #F2F2F2;
+  --text-color: #FFFFFF;
+  --text-color-lighter: #FFFFFF;
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2B2B2B;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*========== Header ==========*/
+.header {
+  /* background-color: red; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10%;
+}
+
+.header .logo {
+  margin-top: var(--mb-3);
+  margin-left: var(--mb-4);
+}
+
+/*========== Nav Bar ==========*/
+
+.navbar {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 90%;
+  text-align: left;
+  overflow: hidden;
+}
+
+.navbar,
+.navbar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  margin-left: var(--mb-4);
+  text-decoration: none;
+  font-size: 20px;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.navbar a span {
+  margin-left: var(--mb-4);
+}
+
+.navbar ul .active-link {
+  font-size: 25px;
+}
+
+.navbar ul a:hover {
+  font-size: 25px;
+}
+
+.navbar ul .active-link .nav__line {
+  animation: grow__line 1s forwards;
+}
+
+.navbar ul a:hover .nav__line {
+  animation: grow__line 1s forwards;
+}
+
+
+.navbar ul {
+  list-style: none;
+  margin-top: 8vh;
+}
+
+.navbar ul li {
+  margin-bottom: 8vh;
+}
+
+.nav__line {
+  height: 2px;
+  width: 0px;
+  display: block;
+  background-color: #fff;
+  margin-top: 0;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+@keyframes grow__line {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+/*========== Main Content ==========*/
+.main__content .section .content__left {
+  overflow-y: hidden;
+}
+
+.main__content .section .content__right {
+  overflow-y: hidden;
+}
+
+.main__content {
+  /* background-color: red; */
+  width: calc(100% - 200px);
+  position: absolute;
+  left: 200px;
+  top: 10%;
+  height: 90%;
+  text-align: left;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.main__content section {
+  display: grid;
+  grid-template-columns: 2fr .5fr;
+  scroll-snap-align: start;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main__content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main__content {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/*========== Section Content ==========*/
+.section {
+  margin-top: 10vh;
+  height: 100vh;
+  padding: 1.5rem 1.5rem;
+}
+
+.content__right {
+  text-align: right;
+}
+
+.content__description {
+  margin-top: 50%;
+}
+
+.content__description .content__leading {
+  font-size: var(--h1-font-size);
+  color: var(--text-color);
+}
+
+.content__about .content__title {
+  font-size: var(--h3-font-size);
+}
+
+.content__about .content__info {
+  font-size: var(--h5-font-size);
+  font-weight: var(--font-medium);
+  padding-right: var(--mb-1);
+  border-right: 2px solid var(--text-color);
+}
+
+.content__description .content__subtitle {
+  font-size: var(--h1-font-size);
+  color: var(--text-color-light);
+}
+
+/*========== SOCIAL ==========*/
+
+.social__container {
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+
+.social__link:hover {
+  color: var(--title-color);
+}
+
+.social__icon {
+  font-size: 1.2rem;
+  margin-right: .25rem;
+}
+
+/*========== IMAGE RELATED ==========*/
+img.model {
+  margin: auto;
+  display: block;
+  text-align: center;
+  height: 100vh;
+}
+
+img.logo {
+  height: 20px;
+}
