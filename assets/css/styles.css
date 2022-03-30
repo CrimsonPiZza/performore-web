@@ -1,5 +1,37 @@
-/*===== GOOGLE FONTS =====*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Secular+One&display=swap');
+/*===== IMPORT FONTS =====*/
+@font-face {
+  font-family: 'attila_sans_classic_trial';
+  src: url('attilasansclassictrial-bold-webfont.woff2') format('woff2'),
+    url('attilasansclassictrial-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'attila_sans_classic_trial';
+  src: url('attilasansclassictrial-semibold-webfont.woff2') format('woff2'),
+    url('attilasansclassictrial-semibold-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: bold;
+
+}
+
+@font-face {
+  font-family: 'attila_sans_classic_trial';
+  src: url('attilasansclassictrial-regular-webfont.woff2') format('woff2'),
+    url('attilasansclassictrial-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'attila_sans_classic_trial';
+  src: url('attilasansclassictrial-light-webfont.woff2') format('woff2'),
+    url('attilasansclassictrial-light-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
 
 /*===== VARIABLES CSS =====*/
 :root {
@@ -8,13 +40,13 @@
   /*========== Colors ==========*/
   --title-color: #0B0A0A;
   --text-color: #403A3A;
-  --text-color-light:#707070;
+  --text-color-light: #707070;
   --container-color: #FAFAFA;
   --container-color-alt: #F0EFEF;
   --body-color: #FCFCFC;
 
   /*========== Font and typography ==========*/
-  --body-font: 'Secular One', sans-serif;
+  --body-font: 'attila_sans_classic_trial', sans-serif;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -25,14 +57,17 @@
   --smaller-font-size: .813rem;
 
   /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
+  --font-light: 200;
+  --font-medium: 400;
+  --font-semi-bold: 500;
+  --font-bold: 700;
 
   /*========== Margins ==========*/
   --mb-1: .5rem;
   --mb-2: 1rem;
   --mb-3: 1.5rem;
   --mb-4: 2rem;
+  --mb-5: 2.5rem;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
@@ -65,7 +100,7 @@ body {
   padding: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
   color: var(--text-color);
 }
 
@@ -103,7 +138,7 @@ a {
 }
 
 .header .logo {
-  margin-top: var(--mb-3);
+  margin-top: var(--mb-5);
   margin-left: var(--mb-4);
 }
 
@@ -113,8 +148,8 @@ a {
   width: 200px;
   position: absolute;
   left: 0;
-  top: 10%;
-  height: 90%;
+  top: 20%;
+  height: 80%;
   text-align: left;
   overflow: hidden;
 }
@@ -128,6 +163,7 @@ a {
 .navbar a {
   color: white;
   margin-left: var(--mb-4);
+  font-weight: var(--font-bold);
   text-decoration: none;
   font-size: 20px;
   -webkit-transition: all .5s ease;
@@ -215,6 +251,10 @@ a {
   scroll-snap-align: start;
 }
 
+.main__content section.program {
+  display: block;
+}
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .main__content::-webkit-scrollbar {
@@ -245,22 +285,25 @@ a {
 }
 
 .content__description .content__leading {
+  font-weight: var(--font-bold);
   font-size: var(--h1-font-size);
   color: var(--text-color);
 }
 
 .content__about .content__title {
+  font-weight: var(--font-semi-bold);
   font-size: var(--h3-font-size);
 }
 
 .content__about .content__info {
-  font-size: var(--h5-font-size);
+  font-size: var(--h4-font-size);
   font-weight: var(--font-medium);
   padding-right: var(--mb-1);
   border-right: 2px solid var(--text-color);
 }
 
 .content__description .content__subtitle {
+  font-weight: var(--font-light);
   font-size: var(--h1-font-size);
   color: var(--text-color-light);
 }
@@ -289,13 +332,164 @@ a {
 }
 
 /*========== IMAGE RELATED ==========*/
+body {
+  background-image: url('/assets/img/mesh-gradient.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 img.model {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 4rem;
   display: block;
-  text-align: center;
   height: 100vh;
+  width: auto;
 }
 
 img.logo {
-  height: 20px;
+  height: 40%;
+}
+
+.model__portrait {
+  position: relative;
+  text-align: center;
+}
+
+.model__portrait .portrait__subtitle {
+  font-weight: var(--font-bold);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 4rem;
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.model__portrait .portrait__title {
+  font-weight: var(--font-bold);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.model__portrait .portrait__desc {
+  font-weight: var(--font-bold);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 3rem;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.model__portrait .portrait__top {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--text-color-lighter);
+  color: transparent;
+  z-index: 100;
+}
+
+.model__portrait .portrait__mid {
+  z-index: 0;
+}
+
+.model__portrait .portrait__bottom {
+  z-index: -100;
+}
+
+/*========== MEDIA QUERIES ==========*/
+@media screen and (max-width: 1157.98px) {
+  body {
+    color: red;
+  }
+}
+
+/*========== VIDEO PLAYER ==========*/
+@-webkit-keyframes slidein {
+  0% {
+    opacity: 0;
+
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.video__container {
+  opacity: 0;
+  z-index: -100;
+}
+
+.video__container.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  z-index: -100;
+  -webkit-animation: slidein 1s ease 1s forwards;
+  -moz-animation: slidein 1s ease 1s forwards;
+  -o-animation: slidein 1s ease 1s forwards;
+  animation: slidein 1s ease 1s forwards;
+}
+
+.video__box{
+  width: 100%;
 }

@@ -27,8 +27,6 @@
     <!--========== Nav Bar ==========-->
     <div>
       <nav class="navbar">
-
-
         <div class="nav__menu">
           <ul class="nav__list">
             <li class="nav__item">
@@ -90,7 +88,15 @@
       <!--========== Welcome ==========-->
       <section class="section welcome" id="welcome">
         <div class="content__left">
-          <img src="assets/img/athlete.png" class="model">
+          <div class="model__portrait">
+            <h1 class="portrait__subtitle portrait__top">Hi!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am</h1>
+            <h1 class="portrait__subtitle portrait__bottom">Hi!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am</h1>
+            <h1 class="portrait__title portrait__top">Rob Morledge</h1>
+            <h1 class="portrait__title portrait__bottom">Rob Morledge</h1>
+            <h1 class="portrait__desc portrait__top">We here to PerformMore</h1>
+            <h1 class="portrait__desc portrait__bottom">We here to PerformMore</h1>
+            <img src="assets/img/athlete.png" class="model portrait__mid">
+          </div>
         </div>
         <div class="content__right">
           <div class="content__description">
@@ -108,7 +114,12 @@
       </section>
       <!--========== Work ==========-->
       <section class="section work" id="work">
-        <h3>Work</h3>
+        <div class="video__container" id="video__container">
+          <video class="video__box" id="video__box" loop>
+            <source src="./assets/video/playback.mp4" type='video/mp4'>
+          </video>
+        </div>
+
       </section>
       <!--========== Program ==========-->
       <section class="section program" id="program">

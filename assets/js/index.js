@@ -24,6 +24,17 @@ function scrollActive() {
       document
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
         .classList.add("active-link");
+
+      // PLAY VIDEO AT WORK TAB
+      const video__container = document.getElementById("video__container");
+      const video = document.getElementById("video__box");
+      if (sectionId == "work") {
+        video__container.classList.add("active")
+        video.play();
+      } else {
+        video__container.classList.remove("active")
+        video.pause();
+      }
     } else {
       document
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
