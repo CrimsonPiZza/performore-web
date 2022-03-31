@@ -240,6 +240,7 @@ a {
   height: 90%;
   text-align: left;
   overflow-y: scroll;
+  -webkit-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -247,12 +248,14 @@ a {
 .main__content section {
   display: grid;
   grid-template-columns: 2fr .5fr;
+  -webkit-scroll-snap-align: start;
   scroll-snap-align: start;
 }
 
 .main__content section.double {
   display: grid;
   grid-template-columns: 2fr 2fr;
+  -webkit-scroll-snap-align: start;
   scroll-snap-align: start;
 }
 
@@ -489,6 +492,7 @@ img.logo {
     height: 90%;
     /* text-align: left; */
     overflow-y: scroll;
+    -webkit-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
   }
