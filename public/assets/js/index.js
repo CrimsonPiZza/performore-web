@@ -25,15 +25,13 @@ function scrollActive() {
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
         .classList.add("active-link");
 
-      // PLAY VIDEO AT PROGRAM TAB
+      // ENABLE VIDEO ON SCREEN AT PROGRAM TAB
       const video__container = document.getElementById("video__container");
-      const video = document.getElementById("video__box");
       if (sectionId == "program") {
-        video__container.classList.add("active")
-        video.play();
+        video__container.classList.add("active");
       } else {
-        video__container.classList.remove("active")
-        video.pause();
+        video__container.classList.remove("active");
+        pauseVideo();
       }
     } else {
       document
@@ -54,3 +52,16 @@ $("nav")
 
     section.scrollIntoView();
   });
+
+/*==================== FUNCTION TO PLAY VIDEO ====================*/
+const video = document.getElementById("video__box");
+const playBtn = document.getElementById("play__btn");
+function playVideo() {
+  playBtn.classList.add("playing");
+  video.play();
+}
+
+function pauseVideo() {
+  playBtn.classList.remove("playing");
+  video.pause();
+}

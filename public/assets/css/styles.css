@@ -93,7 +93,7 @@
 ::before,
 ::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -191,26 +191,29 @@ a {
   margin-left: var(--mb-4);
 }
 
-.navbar ul .active-link, .navbar ul a:hover  {
-  -webkit-transform-origin: top left ;
-      -ms-transform-origin: top left ;
-          transform-origin: top left ;
+.navbar ul .active-link,
+.navbar ul a:hover {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
   -webkit-transform: scale(1.25);
-      -ms-transform: scale(1.25);
-          transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .navbar ul a::after {
   width: 0;
   content: '';
   display: block;
-  background-color: #fff ;
+  background-color: #fff;
   height: 2px;
   -webkit-transition: width 1s;
   -o-transition: width 1s;
   transition: width 1s;
 }
-.navbar ul a:hover::after, .navbar ul .active-link::after {
+
+.navbar ul a:hover::after,
+.navbar ul .active-link::after {
   width: 3rem;
 }
 
@@ -223,8 +226,8 @@ a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .navbar ul li:not(:last-child) {
@@ -416,7 +419,7 @@ a {
   background-attachment: fixed;
   border-radius: 10px;
   -webkit-box-shadow: 0px 5px 40px var(--container-color);
-          box-shadow: 0px 5px 40px var(--container-color);
+  box-shadow: 0px 5px 40px var(--container-color);
 }
 
 .contact__signup .contact__signup__leading {
@@ -440,8 +443,8 @@ a {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: var(--small-font-size);
   color: var(--text-color);
 }
@@ -627,7 +630,7 @@ img.logo {
     background-attachment: fixed;
     border-radius: 10px;
     -webkit-box-shadow: 0px 5px 40px var(--container-color);
-            box-shadow: 0px 5px 40px var(--container-color);
+    box-shadow: 0px 5px 40px var(--container-color);
   }
 
   .contact__signup .contact__signup__leading {
@@ -709,12 +712,85 @@ img.logo {
   transform: translate(-50%, -50%);
   min-width: 100%;
   z-index: -100;
-  -webkit-animation: slidein 1s ease 1s forwards;
-  animation: slidein 1s ease 1s forwards;
+  -webkit-animation: slidein 0.25s ease 0.25s forwards;
+  animation: slidein 0.25s ease 0.25s forwards;
 }
 
 .video__box {
   width: 100%;
+}
+
+.play__btn__container.playing {
+  display: none;
+}
+
+.play__btn__container {
+  width: 100%;
+  text-align: center;
+  margin-top: 25vh;
+}
+
+.circle {
+  stroke: var(--text-color-lighter);
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  opacity: 0.3;
+}
+
+.play__btn {
+  /*  border: 1px solid red;*/
+  display: inline-block;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.7s ease-in-out;
+}
+
+.play__btn .triangle {
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 480;
+  stroke: var(--text-color-lighter);
+  transform: translateY(0);
+}
+
+.play__btn:hover .triangle {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  stroke: var(--text-color-lighter);
+  animation: nudge 0.7s ease-in-out;
+}
+
+.play__btn__container:hover {
+  cursor: grab;
+}
+
+@keyframes nudge {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  70% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.play__btn:hover .circle {
+  stroke-dashoffset: 0;
+  opacity: 1;
 }
 
 /* MATERIAL INPUT BOX AND BTN */
@@ -810,11 +886,11 @@ label {
   text-decoration: none;
   outline: none;
   -webkit-box-shadow: 0px 5px 40px var(--container-color);
-          box-shadow: 0px 5px 40px var(--container-color);
+  box-shadow: 0px 5px 40px var(--container-color);
   border: none;
 }
 
 .material__btn:hover {
   -webkit-box-shadow: 0px 0px 12px var(--text-color-light);
-          box-shadow: 0px 0px 12px var(--text-color-light);
+  box-shadow: 0px 0px 12px var(--text-color-light);
 }
