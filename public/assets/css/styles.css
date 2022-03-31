@@ -90,7 +90,7 @@ body.dark-theme {
   --title-color: #F2F2F2;
   --text-color: #FFFFFF;
   --text-color-lighter: #FFFFFF;
-  --container-color: #212121;
+  --container-color: #000401;
   --container-color-alt: #181616;
   --body-color: #2B2B2B;
 }
@@ -250,6 +250,13 @@ a {
   scroll-snap-align: start;
 }
 
+.main__content section.double {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  scroll-snap-align: start;
+}
+
+
 .main__content section.program {
   display: block;
 }
@@ -310,6 +317,61 @@ a {
   font-weight: var(--font-light);
   font-size: var(--h1-font-size);
   color: var(--text-color-light);
+}
+
+.contact__form {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.contact__form .contact__leading {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+}
+
+.contact__form .contact__desc {
+  font-weight: var(--font-light);
+  margin-top: 5%;
+}
+
+.contact__form .contact__leading {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+}
+
+.contact__detail {
+  margin-top: 5%;
+}
+
+.contact__detail .contact__detail__leading {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.contact__detail .contact__detail__desc {
+  margin-top: 0.2rem;
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-light);
+}
+
+.contact__signup {
+  text-align: center;
+  height: 380px;
+  margin: 20% 2rem 2rem 2rem;
+  padding: 2rem;
+  background-image: url('/assets/img/mesh-gradient.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-radius: 10px;
+  box-shadow: 0px 5px 40px var(--container-color);
+}
+
+.contact__signup .contact__signup__leading {
+  position: relative;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
 }
 
 /*========== SOCIAL ==========*/
@@ -454,6 +516,70 @@ img.logo {
     grid-template-columns: 1fr;
   }
 
+  .main__content section.double {
+    display: block;
+  }
+
+  /* START: CONTACT FORM MOBILE MODE */
+  .contact__form {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .contact__form .contact__leading {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+  }
+
+  .contact__form .contact__desc {
+    font-weight: var(--font-light);
+    font-size: var(--h4-font-size);
+    margin-top: 1%;
+  }
+
+  .contact__form .contact__leading {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+  }
+
+  .contact__detail {
+    margin-top: 2%;
+  }
+
+  .contact__detail .contact__detail__leading {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+  }
+
+  .contact__detail .contact__detail__desc {
+    margin-top: 0.2rem;
+    font-size: var(--h4-font-size);
+    font-weight: var(--font-light);
+  }
+
+  .contact__signup {
+    text-align: center;
+    height: 380px;
+    margin: 2rem auto auto auto;
+    padding: 2rem;
+    background-image: url('/assets/img/mesh-gradient.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-radius: 10px;
+    box-shadow: 0px 5px 40px var(--container-color);
+  }
+
+  .contact__signup .contact__signup__leading {
+    position: relative;
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+  }
+
+  /* END: CONTACT FORM MOBILE MODE */
+
+
   /* START: TO MAKE RIGHT CONTENT DESCRIPTION MOBILE VERSION APPEAR */
   .content__right {
     display: none;
@@ -471,16 +597,16 @@ img.logo {
   .content__description .content__leading {
     font-size: var(--h2-font-size);
   }
-  
+
   .content__about .content__title {
     font-size: var(--h4-font-size);
   }
-  
+
   .content__about .content__info {
     inline-size: 320px;
     font-size: var(--h5-font-size);
   }
-  
+
   .content__description .content__subtitle {
     font-size: var(--h2-font-size);
   }
@@ -554,4 +680,100 @@ img.logo {
 
 .video__box {
   width: 100%;
+}
+
+/* MATERIAL INPUT BOX AND BTN */
+
+.group {
+  position: relative;
+  margin: 45px 0;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--text-color-light);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label {
+  top: -14px;
+  font-size: 12px;
+  color: var(--text-color-lighter);
+}
+
+input:focus~.bar:before,
+textarea:focus~.bar:before {
+  width: 100%;
+  color: var(--text-color-lighter);
+}
+
+input[type=password] {
+  letter-spacing: 0.3em;
+}
+
+label {
+  color: var(--text-color-light);
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: var(--text-color-light);
+  transition: 300ms ease all;
+  left: 0%;
+}
+
+.material__btn {
+  width: 180px;
+  height: 64px;
+  background-image: url('/assets/img/mesh-gradient.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0px 5px 40px var(--container-color);
+  border: none;
+}
+
+.material__btn:hover {
+  box-shadow: 0px 0px 12px var(--text-color-light);
 }
