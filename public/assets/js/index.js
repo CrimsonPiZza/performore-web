@@ -25,10 +25,10 @@ function scrollActive() {
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
         .classList.add("active-link");
 
-      // PLAY VIDEO AT WORK TAB
+      // PLAY VIDEO AT PROGRAM TAB
       const video__container = document.getElementById("video__container");
       const video = document.getElementById("video__box");
-      if (sectionId == "work") {
+      if (sectionId == "program") {
         video__container.classList.add("active")
         video.play();
       } else {
@@ -46,7 +46,7 @@ main__content.addEventListener("scroll", scrollActive);
 
 /*==================== SCROLL TO CLICK NAV LINK ====================*/
 $("nav")
-  .find("a")
+  .find("a.nav__link")
   .click(function (e) {
     e.preventDefault();
     const sectionId = $(this).attr("href").replace("#", "");
