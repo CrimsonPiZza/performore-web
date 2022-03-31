@@ -240,15 +240,19 @@ a {
   height: 90%;
   text-align: left;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   -webkit-scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  -ms-scroll-snap-type: mandatory;
 }
 
 .main__content section {
   display: grid;
   grid-template-columns: 2fr .5fr;
   -webkit-scroll-snap-align: start;
+  -ms-scroll-snap-align: start;
   scroll-snap-align: start;
 }
 
@@ -256,6 +260,7 @@ a {
   display: grid;
   grid-template-columns: 2fr 2fr;
   -webkit-scroll-snap-align: start;
+  -ms-scroll-snap-align: start;
   scroll-snap-align: start;
 }
 
@@ -492,9 +497,12 @@ img.logo {
     height: 90%;
     /* text-align: left; */
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     -webkit-scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: mandatory;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    -ms-scroll-snap-type: mandatory;
   }
 
   img.model {
