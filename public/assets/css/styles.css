@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /*===== IMPORT FONTS =====*/
 @font-face {
   font-family: 'attila_sans_classic_trial';
@@ -168,6 +175,7 @@ a {
 }
 
 .navbar a {
+  display: inline-block;
   color: white;
   margin-left: var(--mb-4);
   font-weight: var(--font-bold);
@@ -176,37 +184,50 @@ a {
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
+
 }
 
 .navbar a span {
   margin-left: var(--mb-4);
 }
 
-.navbar ul .active-link {
-  font-size: 25px;
+.navbar ul .active-link, .navbar ul a:hover  {
+  -webkit-transform-origin: top left ;
+      -ms-transform-origin: top left ;
+          transform-origin: top left ;
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
-.navbar ul a:hover {
-  font-size: 25px;
+.navbar ul a::after {
+  width: 0;
+  content: '';
+  display: block;
+  background-color: #fff ;
+  height: 2px;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
 }
-
-.navbar ul .active-link .nav__line {
-  -webkit-animation: grow__line 1s forwards;
-          animation: grow__line 1s forwards;
-}
-
-.navbar ul a:hover .nav__line {
-  -webkit-animation: grow__line 1s forwards;
-          animation: grow__line 1s forwards;
+.navbar ul a:hover::after, .navbar ul .active-link::after {
+  width: 3rem;
 }
 
 
 .navbar ul {
   list-style: none;
-  margin-top: 8vh;
+  margin: 8vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.navbar ul li {
+.navbar ul li:not(:last-child) {
   margin-bottom: 8vh;
 }
 
