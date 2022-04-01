@@ -25,9 +25,9 @@ function scrollActive() {
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
         .classList.add("active-link");
 
-      // ENABLE VIDEO ON SCREEN AT PROGRAM TAB
+      // ENABLE VIDEO ON SCREEN AT INSIGHT TAB
       const video__container = document.getElementById("video__container");
-      if (sectionId == "program") {
+      if (sectionId == "insight") {
         video__container.classList.add("active");
       } else {
         video__container.classList.remove("active");
