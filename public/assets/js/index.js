@@ -1,15 +1,13 @@
 /*==================== INITIALIZE DEFAULT SECTION ====================*/
-$(document).ready(function () {
-  const default_selected_section_link = document
-    .querySelector("a.active-link")
-    .getAttribute("href")
-    .replace("#", "");
-  const section = document.querySelector(
-    ".section[id=" + default_selected_section_link + "]"
-  );
+const default_selected_section_link = document
+.querySelector("a.active-link")
+.getAttribute("href")
+.replace("#", "");
+const section = document.querySelector(
+".section[id=" + default_selected_section_link + "]"
+);
 
-  section.scrollIntoView();
-});
+section.scrollIntoView();
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
