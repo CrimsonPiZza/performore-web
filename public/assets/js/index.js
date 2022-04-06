@@ -12,6 +12,7 @@ section.scrollIntoView();
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 const main__content = document.getElementById("main__content");
+let current_sectionId = "";
 
 function scrollActive() {
   const scrollY = main__content.scrollTop;
@@ -21,9 +22,20 @@ function scrollActive() {
     const sectionTop = current.offsetTop - 50;
     const sectionId = current.getAttribute("id");
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
+      const section = document.querySelector(
+        ".nav__menu a[href*=" + sectionId + "]"
+      );
+
+      section.classList.add("active-link");
+
+      // REMOVE SCROLL SNAPPING IN STORE
+      if (sectionId == "store") {
+        main__content.classList.add("no__snap");
+      } else {
+        main__content.classList.remove("no__snap");
+      }
+
+      current_sectionId = sectionId;
 
       // ENABLE VIDEO ON SCREEN AT INSIGHT TAB
       const video__container = document.getElementById("video__container");
