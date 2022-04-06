@@ -955,7 +955,7 @@ label {
   width: 320px;
   height: 450px;
   background: var(--container-color);
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
