@@ -1,13 +1,15 @@
 /*==================== INITIALIZE DEFAULT SECTION ====================*/
-const default_selected_section_link = document
-  .querySelector("a.active-link")
-  .getAttribute("href")
-  .replace("#", "");
-const section = document.querySelector(
-  ".section[id=" + default_selected_section_link + "]"
-);
+$(document).ready(function () {
+  const default_selected_section_link = document
+    .querySelector("a.active-link")
+    .getAttribute("href")
+    .replace("#", "");
+  const section = document.querySelector(
+    ".section[id=" + default_selected_section_link + "]"
+  );
 
-section.scrollIntoView();
+  section.scrollIntoView();
+});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
@@ -27,13 +29,6 @@ function scrollActive() {
       );
 
       section.classList.add("active-link");
-
-      // REMOVE SCROLL SNAPPING IN STORE
-      if (sectionId == "store") {
-        main__content.classList.add("no__snap");
-      } else {
-        main__content.classList.remove("no__snap");
-      }
 
       current_sectionId = sectionId;
 
